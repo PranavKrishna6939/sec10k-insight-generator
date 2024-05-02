@@ -1,0 +1,4 @@
+streamlit
+sec-edgar-downloader
+beautifulsoup4
+google-generativeai
