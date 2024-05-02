@@ -98,10 +98,10 @@ with col2:
 
 
 if st.button('Fetch'):
-    with st.spinner('Fetching Reports and Genearating Insights...'):
+    with st.spinner('Fetching Reports and Generating Insights...'):
         dl = Downloader("JJBigDub", "jjbigdub@gmail.com")
         dl.get("10-K", ticker, limit=1)
-        parent_folder_path = rf"C:\Users\Kumar\Desktop\Desktop\Python\sec-edgar-filings\{ticker}\10-K"
+        parent_folder_path = f"/home/ec2-user/sec10k/sec10k-insight-generator/sec-edgar-filings/{ticker}/10-K"
         directories = [dir for dir in os.listdir(parent_folder_path) if os.path.isdir(os.path.join(parent_folder_path, dir))]
 
 
