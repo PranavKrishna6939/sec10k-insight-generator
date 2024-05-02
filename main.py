@@ -127,7 +127,7 @@ if st.button('Fetch'):
         Part1_output = Part1_response.candidates[0].content.parts[0].text
         st.markdown(f"""{Part1_output}""")
 
-        st.title('PART 2:   :green[_Risk Factors_]   :confused:')
+        st.title('PART 2:   :green[_Risk Factors_]   :exclamation:')
         st.divider()
 
         Part2_start = "Item 1A"
