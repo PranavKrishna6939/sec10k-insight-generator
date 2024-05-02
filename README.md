@@ -1,0 +1,1 @@
+# sec10k-insight-generator
