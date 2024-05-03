@@ -112,7 +112,7 @@ with col1:
     )
 
 with col2:
-    word_count = st.slider('Word Count?', 0, 1000, 10)
+    word_count = st.slider('Word Count?', 0, 1000, 100)
 
 # Fetch button to trigger insights generation
 if st.button('Fetch'):
