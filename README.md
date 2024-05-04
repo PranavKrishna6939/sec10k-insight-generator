@@ -5,6 +5,9 @@ The application allows users to input a stock ticker and select the word limit f
 
 ## To access the deployed application [click here](http://13.234.213.129:8501/)
 ![](InsightGenerator.gif)
+<video src="InsightGeneratorMP4.mp4" controls>
+    Your browser does not support the video tag.
+</video>
 
 ## Features
 
