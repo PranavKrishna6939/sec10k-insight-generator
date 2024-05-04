@@ -4,6 +4,7 @@ This repository contains a Streamlit web application that generates insights fro
 The application allows users to input a stock ticker and select the word limit for the generated insights.
 
 ## To access the deployed application [click here](http://13.234.213.129:8501/)
+![](InsightGenerator.gif)
 
 ## Features
 
