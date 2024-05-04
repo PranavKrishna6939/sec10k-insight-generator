@@ -133,7 +133,7 @@ if st.button('Fetch'):
 
         cleantext = cleanhtml(html_text)
 
-        st.title('PART 1:   :green[_Business Overview_]   :briefcase:')
+        st.title(' :green[Business Overview]   :briefcase:')
         st.divider()
 
         # Generate insights for Business Overview
@@ -147,7 +147,7 @@ if st.button('Fetch'):
         Part1_output = Part1_response.candidates[0].content.parts[0].text
         st.markdown(f"""{Part1_output}""")
 
-        st.title('PART 2:   :green[_Risk Factors_]   :exclamation:')
+        st.title(' :green[Risk Factors]   :exclamation:')
         st.divider()
 
         # Generate insights for Risk Factors
@@ -161,7 +161,7 @@ if st.button('Fetch'):
         Part2_output = Part2_response.candidates[0].content.parts[0].text
         st.markdown(f"""{Part2_output}""")
 
-        st.title('PART 3:   :green[_Financial Highlights_]   :chart_with_upwards_trend:')
+        st.title(' :green[Financial Highlights]   :chart_with_upwards_trend:')
         st.divider()
 
         # Generate insights for Financial Highlights
