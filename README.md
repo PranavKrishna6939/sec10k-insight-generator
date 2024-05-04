@@ -19,18 +19,18 @@ The application allows users to input a stock ticker and select a word limit for
 - **AWS EC2:** Program hosted on a EC2 instance for its ability to quickly setup python scripts.
 
 ## Prompt used for Insight Generation
-```bash
+`
 Generate insights for the following SEC 10K Filing Part for {ticker} in about {word_count} words. ENSURE THAT YOU FOLLOW THE BELOW 4 GUIDELINES
 1) Use multiple neccessary sub-heading with bullet points, discussing Fiscal Year Highlights, Products and Services Performance, Segment wise Performance, Operating Expenses and Gross margin, Liquidity and Capital Resources and Conclusion.
 2) USE :orange[<insert sub-heading>] for sub-headings.
 3) Present the answer in a markdown format.
 4) DO NOT USE ' or " characters in the answer.
 An example of a suitable format is given as:
-# :orange[Fiscal Year Highlights]\n {ticker}'s fiscal year 2024 witnessed:
--**Rise in Product & Services Performance:**
+:orange[Fiscal Year Highlights]\n {ticker}'s fiscal year 2024 witnessed:
+- Rise in Product & Services Performance:
 - Successful launch of Products.
 - Growth in Business.
 - Sustained leadership in Technology.
 Format your answer in such a way. The data to be summarised starts below this line
 {Part3_text}
-```
+`
