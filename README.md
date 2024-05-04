@@ -35,7 +35,7 @@ An example of a suitable format is given as:
 Format your answer in such a way. The data to be summarised starts below this line
 {Part3_text}
 ```
-One of the three similar prompts used for insight generation. Prompts designed such as to provide a rough overview of the inner workings of the company.
+One of the three similar prompts used for insight generation. Prompts designed such as to generate insights about a rough overview of the inner workings of the company.
 
 ## Insight Categories
 
