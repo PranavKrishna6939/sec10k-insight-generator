@@ -122,8 +122,6 @@ if st.button('Fetch'):
         dl.get("10-K", ticker, limit=1)
         parent_folder_path = f"/home/ec2-user/sec10k/sec10k-insight-generator/sec-edgar-filings/{ticker}/10-K"
         directories = [dir for dir in os.listdir(parent_folder_path) if os.path.isdir(os.path.join(parent_folder_path, dir))]
-
-
         for directory in directories:
             files = os.listdir(os.path.join(parent_folder_path, directory))
             
@@ -142,7 +140,7 @@ if st.button('Fetch'):
         Part1_start = "Item 1"
         Part1_end = "Item 1A"
         Part1_text, prev_end = extract_text(cleantext, Part1_start, Part1_end, 0, 1)
-        Part1_input = f"Generate insights for the following SEC 10K Filing Part for {ticker} in about {word_count} words. ENSURE THAT YOU FOLLOW THE BELOW 4 GUIDELINES\n 1) Use multiple neccessary sub-heading, Company Overview and Products, Competition, R&D, Sales and Sourcing.\n 2) USE :orange[<insert sub-heading>] for sub-headings.\n 3) Present the answer in a markdown format. 4) DO NOT USE \' or \" characters in the answer.\n An example of a suitable Format is given as:\n # :orange[Fiscal Year Highlights]\n {ticker}'s fiscal year 2024 witnessed: -\n **Rise in Product & Services Performance:**\n - Successful launch of Products.\n - Growth in Business. \n- Sustained leadership in Technology.\n Format your answer in such a way. The data to be summarised starts below this line. \n {Part1_text}"
+        Part1_input = f"Generate insights for the following SEC 10K Filing Part for {ticker} in about {word_count} words. ENSURE THAT YOU FOLLOW THE BELOW 4 GUIDELINES\n 1) Use clear sub-headings with bullet points to discuss key aspects such as Company Overview and Products, Competition, R&D, Sales and Sourcing.\n 2) USE :orange[<insert sub-heading>] for sub-headings.\n 3) Present the answer in a markdown format. 4) Avoid using single or double quotation marks in the response.\n An example of a suitable Format is given as:\n # :orange[Fiscal Year Highlights]\n {ticker}'s fiscal year 2024 witnessed: -\n **Rise in Product & Services Performance:**\n - Successful launch of Products.\n - Growth in Business. \n- Sustained leadership in Technology.\n Format your answer in such a way. The data to be summarised starts below this line. \n {Part1_text}"
         if (string_count(Part1_input) > 20000):
             Part1_input = shorten_text(Part1_input)
         Part1_response = model.generate_content(Part1_input)
@@ -156,7 +154,7 @@ if st.button('Fetch'):
         Part2_start = "Item 1A"
         Part2_end = "Item 1B"
         Part2_text, prev_end1 = extract_text(cleantext, Part2_start, Part2_end, prev_end, 0)
-        Part2_input = f"Generate insights for the following SEC 10K Filing Part for {ticker} in about {word_count} words. ENSURE THAT YOU FOLLOW THE BELOW 4 GUIDELINES\n 1) Use multiple neccessary sub-heading with bullet points, discussing Macroeconomic and Industry Risks, Business Risks, Legal and Regulatory Compliance Risks, Financial Risks and General Risks. Also discuss some possible ways to mitigate the risks involved.\n 2) USE :orange[<insert sub-heading>] for sub-headings.\n 3) Present the answer in a markdown format.\n 4) DO NOT USE \' or \" characters in the answer.\n An example of a suitable format is given as:\n # :orange[Fiscal Year Highlights]\n {ticker}'s fiscal year 2024 witnessed: -\n **Rise in Product & Services Performance:**\n - Successful launch of Products.\n - Growth in Business. \n- Sustained leadership in Technology.\n Format your answer in such a way. The data to be summarised starts below this line \n {Part2_text}"
+        Part2_input = f"Generate insights for the following SEC 10K Filing Part for {ticker} in about {word_count} words. ENSURE THAT YOU FOLLOW THE BELOW 4 GUIDELINES\n 1) Use clear sub-headings with bullet points to discuss key aspects such as Macroeconomic and Industry Risks, Business Risks, Legal and Regulatory Compliance Risks, Financial Risks and General Risks. Also discuss some possible ways to mitigate the risks involved.\n 2) USE :orange[<insert sub-heading>] for sub-headings.\n 3) Present the answer in a markdown format.\n 4) Avoid using single or double quotation marks in the response.\n An example of a suitable format is given as:\n # :orange[Fiscal Year Highlights]\n {ticker}'s fiscal year 2024 witnessed: -\n **Rise in Product & Services Performance:**\n - Successful launch of Products.\n - Growth in Business. \n- Sustained leadership in Technology.\n Format your answer in such a way. The data to be summarised starts below this line \n {Part2_text}"
         if (string_count(Part2_input) > 20000):
             Part2_input = shorten_text(Part2_input)
         Part2_response = model.generate_content(Part2_input)
@@ -170,7 +168,7 @@ if st.button('Fetch'):
         Part3_start = "Item 7"
         Part3_end = "Item 7A"
         Part3_text, _ = extract_text(cleantext, Part3_start, Part3_end, prev_end1, 0)
-        Part3_input = f"Generate insights for the following SEC 10K Filing Part for {ticker} in about {word_count} words. ENSURE THAT YOU FOLLOW THE BELOW 4 GUIDELINES\n 1) Use multiple neccessary sub-heading with bullet points, discussing Fiscal Year Highlights, Products and Services Performance, Segment wise Performance, Operating Expenses and Gross margin, Liquidity and Capital Resources and Conclusion.\n 2) USE :orange[<insert sub-heading>] for sub-headings.\n 3) Present the answer in a markdown format.\n 4) DO NOT USE \' or \" characters in the answer.\n An example of a suitable format is given as:\n # :orange[Fiscal Year Highlights]\n {ticker}'s fiscal year 2024 witnessed: -\n **Rise in Product & Services Performance:**\n - Successful launch of Products.\n - Growth in Business. \n- Sustained leadership in Technology.\n Format your answer in such a way. The data to be summarised starts below this line \n {Part3_text}"
+        Part3_input = f"Generate insights for the following SEC 10K Filing Part for {ticker} in about {word_count} words. ENSURE THAT YOU FOLLOW THE BELOW 4 GUIDELINES\n 1) Use clear sub-headings with bullet points to discuss key aspects such as Fiscal Year Highlights, Products and Services Performance, Segment wise Performance, Operating Expenses and Gross margin, Liquidity and Capital Resources and Conclusion.\n 2) USE :orange[<insert sub-heading>] for sub-headings.\n 3) Present the answer in a markdown format.\n 4) Avoid using single or double quotation marks in the response.\n An example of a suitable format is given as:\n # :orange[Fiscal Year Highlights]\n {ticker}'s fiscal year 2024 witnessed: -\n **Rise in Product & Services Performance:**\n - Successful launch of Products.\n - Growth in Business. \n- Sustained leadership in Technology.\n Format your answer in such a way. The data to be summarised starts below this line \n {Part3_text}"
         if (string_count(Part3_input) > 20000):
             Part3_input = shorten_text(Part3_input)
         Part3_response = model.generate_content(Part3_input)
