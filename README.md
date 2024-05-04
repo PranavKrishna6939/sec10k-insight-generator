@@ -51,3 +51,8 @@ Only the latest SEC 10K filing used for insight generation. Use of previous avai
 - Draw comparision to determine the shift in goals and priorities of a company, by tracking the frequency of usage of a particular word (such as Artificial Intelligence) over the years.
 - Analyse the growth in financial performance of a company, compare the split of revenue between different products and services offered.
 - Determine the sentiment of board members surrounding the company.
+
+## Acknowledgments
+- `Financial Services Innovation Lab, Georgia Tech`, for providing the programming task.
+- Google for developing the `Gemini Pro` model used for generating insights.
+
